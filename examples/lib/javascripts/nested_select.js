@@ -282,7 +282,6 @@ function add_options(groupKids, parent, single, mapToParent, groupNumber){
 }
 
 function deselectSection(group){
-    console.log(group);
     var controls = group.split("|");
 
     for(var i = 0; i < controls.length; i++){
