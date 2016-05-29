@@ -183,7 +183,7 @@ function createInputPage(pageNumber){
     if (!pageStyleClass)
         pageStyleClass = "";
 
-    inputPage.setAttribute('class','inputPage ' + pageStyleClass);
+    inputPage.setAttribute('class','inputPage2 ' + pageStyleClass);
     inputPage.setAttribute('id','page'+pageNumber);
 
     var backButton = __$('backButton');
@@ -1479,10 +1479,13 @@ function navigateToPage(destPage, validate, navback){
             if (tstRetrospectiveMode != "true"){
                 nextButton.innerHTML=""
                 nextButton.setAttribute("onMouseDown", "return false");
+                nextButton.style.display = "none";
             }
             else if (missingDisabled != true){
                 nextButton.innerHTML="<span>Skip</span>"
             }
+        } else {
+            nextButton.style.display = "block";
         }
 
         // execute JS code when a field's page has just been loaded
@@ -2209,13 +2212,13 @@ function getButtons(chars){
 }
 
 function getCharButtonSetID(character,id){
-    return '<button onMouseDown="press(\''+character+'\');" class="keyboardButton" id="'+id+'"><span>' +character+ '</span></button>';
+    return '<button onMouseDown="press(\''+character+'\');" class="keyboardButton blue" id="'+id+'"><span>' +character+ '</span></button>';
 }
 
 function getButtonString(id,string){
     return "<button \
 	onMouseDown='press(this.id);' \
-	class='keyboardButton' \
+	class='keyboardButton blue' \
 	id='"+id+"'><span>"+
     string +
     "</span></button>";
@@ -2224,7 +2227,7 @@ function getButtonString(id,string){
 function getButtonString(id, string, style){
     return "<button \
 	onMouseDown='press(this.id);' \
-	class='keyboardButton' \
+	class='keyboardButton blue' \
 	id='" + id + "' style='" + style + "'><span>" +
     string +
     "</span></button>";

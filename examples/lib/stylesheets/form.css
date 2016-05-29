@@ -24,12 +24,12 @@ body{
     background:#FFFFFF;
     position:absolute;
     /*left:50%;*/
-    top:50%;
+    top:0px;
     width:99%;
-    height:750px;
+    height:100%;
     margin-left:0.5%;
     margin-right:0.5%;
-    margin-top:-380px;
+    /*margin-top:-380px;*/
 
 }
 

@@ -32,12 +32,12 @@ div {
 #content {
     background:#FFFFFF;
     position:absolute;
-    top:50%;
+    top:0px;
     width:99%;
-    height:750px;
+    height:100%;
     margin-left:0.5%;
     margin-right:0.5%;
-    margin-top:-380px;
+    /*margin-top:-380px;*/
     -moz-user-select:none;
 }
 
@@ -338,7 +338,7 @@ div.panel h2 {
 
 #main {
     background-color: #fff;
-    height: 68%;
+    height: calc(100% - 250px);
 }
 
 #nav {
