@@ -445,6 +445,7 @@ button:hover.dark span {
 
 #cancelButton {
     float:left;
+    margin-left: 15px;
 }
 
 #nextButton {
@@ -730,7 +731,10 @@ button:hover.dark span {
 .NumbersOnly,
 .DatesOnly { height: 330px !important }
 
-.NoKeyboard, .NoControls { height: 660px !important }
+.NoKeyboard, .NoControls {
+    /*height: 660px !important*/
+    height: 100% !important;
+}
 
 .NoKeyboard .inputFrameClass { height: 595px !important }
 
