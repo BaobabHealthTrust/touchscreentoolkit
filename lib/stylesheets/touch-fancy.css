@@ -1294,3 +1294,5 @@ button:active {
     height: calc(100% - 50px);
     /*	overflow: hidden; */
 }
+
+.NumbersOnly .inputFrameClass { height: 50px !important }
