@@ -124,19 +124,26 @@ function createLoadingMessage(){
     msg.style.color = "#00f";
     msg.style.backgroundColor = "#fff";
     msg.style.fontSize = "2em";
-    msg.innerHTML = "<div id='progressAnimation' style='margin-top:35%; " +
-    "font-style: italic; padding-left: 350px; border: 1px solid #fff; text-align: left;'>Loading. Please Wait...</div>";
     msg.style.position = "absolute";
-    msg.style.left = "50%";
-    msg.style.top = "50%";
-    msg.style.width = "1000px";
-    msg.style.height = "750px";
-    msg.style.marginLeft = "-500px";
-    msg.style.marginTop = "-380px";
+    msg.style.left = "0px";
+    msg.style.top = "0px";
+    msg.style.width = "100%";
+    msg.style.height = "100%";
+    msg.style.margin = "0px";
     msg.style.textAlign = "center";
     msg.style.verticalAlign = "middle";
 
     document.body.appendChild(msg);
+
+    var progressAnimation = document.createElement("div");
+    progressAnimation.id = "progressAnimation";
+    progressAnimation.style.position = "absolute";
+    progressAnimation.style.top = "calc(50% - 20px)";
+    progressAnimation.style.left = "calc(50% - 150px)";
+    progressAnimation.innerHTML = "Loading. Please Wait...";
+    progressAnimation.style.fontStyle = "italic";
+
+    msg.appendChild(progressAnimation);
 
     setTimeout("changeProgressMessage('progressAnimation')", timerout);
 }
