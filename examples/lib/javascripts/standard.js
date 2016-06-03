@@ -146,6 +146,11 @@ function loadTouchscreenToolkit() {
     enableTouchscreenInterface();
 
     tstKeyboard = __$('keyboard');
+
+    document.body.oncontextmenu = function () {
+        return false;
+    }
+
 }
 
 
