@@ -736,7 +736,7 @@ button:hover.dark span {
     height: 100% !important;
 }
 
-.NoKeyboard .inputFrameClass { height: 595px !important }
+.NoKeyboard .inputFrameClass { height: calc(100% - 90px) !important }
 
 .NoKeyboard .options { height: 552px !important }
 
