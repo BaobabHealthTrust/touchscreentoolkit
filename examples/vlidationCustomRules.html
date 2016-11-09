@@ -1,0 +1,109 @@
+<html>
+<head>
+    <title>Registration</title>
+    <script type="text/javascript" language="javascript" src="lib/javascripts/touchScreenToolkit.js" defer></script>
+    <meta http-equiv='content-type' content='text/html;charset=UTF-8'/>
+    <script language="javascript">
+        tstUsername = "";
+        tstCurrentDate = "2010/03/12";
+        tt_cancel_destination = '../home.html';
+        tt_cancel_show = 'show.html';
+
+        var today = new Date();
+        var y = today.getFullYear();
+        var m = padZeros((today.getMonth() + 1), 2);
+        var date0 = y + "-" + m + "-" + padZeros(today.getDate(), 2);
+        var date1 = y + "-" + m + "-10";
+        var date2 = y + "-" + m + "-26";
+
+        var sel = {};
+
+        function padZeros(number, positions) {
+            var zeros = parseInt(positions) - String(number).length;
+            var padded = "";
+
+            for (var i = 0; i < zeros; i++) {
+                padded += "0";
+            }
+
+            padded += String(number);
+
+            return padded;
+        }
+
+        sel[date1] = 600;
+        sel[date2] = 4;
+
+    </script>
+    <style>
+        .tt_unknown #SHIFT {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id='content'>
+    <div id='description' style='color:#777;position:absolute;margin-top:-70px;'></div>
+    <center>
+        <form action='' method="post">
+            <table cellpadding=10>
+                <tr>
+                    <th colspan=2>Registration</th>
+                </tr>
+                <tr>
+                    <td align='center'>
+                        <input type='submit' value='Finish'/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Custom Field 0</td>
+                    <td>
+                        <input type="text" id="field0" name="field0" helpText="Custom Field 0">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Custom Field 1</td>
+                    <td>
+                        <input type="text" id="field1" name="field1" helpText="Custom Field 1">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Custom Field 2</td>
+                    <td>
+                        <input type="text" id="field2" name="field2" validationCustomRule="checkVariables()"
+                               validationMessage="Using my custom message!" helpText="Custom Field 2">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Summary</td>
+                    <td>
+                        <input type="text" id="summary" name="summary" helpText="Summary" tt_onLoad="showSummary()">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </center>
+</div>
+
+<script>
+
+    function __$(id) {
+
+        return document.getElementById(id);
+
+    }
+
+    var checkVariables = function () {
+
+        var result = true;
+
+        if (__$("field0").value.trim() != "A" && __$("field1").value.trim() != "B")
+            result = false;
+
+        return result;
+
+    };
+
+</script>
+</body>
+</html>
