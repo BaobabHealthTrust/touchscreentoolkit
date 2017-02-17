@@ -17,7 +17,7 @@
 // Check if calling file is an example or an external page
 var path = window.location.href.match(/touchscreentoolkit/i);
 var ext = (path ? "" : "touchscreentoolkit/");
-var timerout = 150;
+var timerout = 10;
 var calledMethod = null;
 var numberOfTrials = 0;
     
@@ -145,7 +145,7 @@ function createLoadingMessage(){
 
     msg.appendChild(progressAnimation);
 
-    setTimeout("changeProgressMessage('progressAnimation')", timerout);
+    setTimeout(function(){changeProgressMessage('progressAnimation')}, timerout);
 }
 
 function changeProgressMessage(id){
@@ -172,7 +172,7 @@ function changeProgressMessage(id){
             obj.innerHTML = "Loading. Please Wait...";
         }
 
-        setTimeout("changeProgressMessage('" + id + "')", timerout);
+        setTimeout(function(){changeProgressMessage(id);}, timerout);
     }
 }
 
@@ -186,13 +186,13 @@ if((document.forms[0] != undefined ? (document.forms[0].getAttribute("extended")
 
     include("multiTouch");
     calledMethod = "initMultipleQuestions()";
-    setTimeout("initMultipleQuestions()", timerout);
+    setTimeout(function(){initMultipleQuestions()}, timerout);
 
 } else if(__$('home') != null || __$('dashboard') != null || __$('general_dashboard') != null){
 
     include("dashboard");
     calledMethod = "createPage()";
-    setTimeout("createPage()", timerout);
+    setTimeout(function(){createPage();}, timerout);
 
 } else {
     try {
@@ -200,6 +200,6 @@ if((document.forms[0] != undefined ? (document.forms[0].getAttribute("extended")
         include("calendar");
         include("datepicker");
         calledMethod = "loadTouchscreenToolkit()";
-        setTimeout("loadTouchscreenToolkit()", timerout);
+        setTimeout(function(){loadTouchscreenToolkit()}, timerout);
     }catch(e){}
 }
